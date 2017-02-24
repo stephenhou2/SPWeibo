@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11259CD41E606AE700F4ABFC /* VisitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11259CD31E606AE700F4ABFC /* VisitorViewController.swift */; };
+		11259CDA1E60A01100F4ABFC /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11259CD91E60A01100F4ABFC /* VisitorView.swift */; };
 		1156D5B31E5FD697007805D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156D5B21E5FD697007805D6 /* AppDelegate.swift */; };
 		1156D5C81E5FD697007805D6 /* SPWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156D5C71E5FD697007805D6 /* SPWeiboTests.swift */; };
 		1156D5D31E5FD697007805D6 /* SPWeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156D5D21E5FD697007805D6 /* SPWeiboUITests.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11259CD31E606AE700F4ABFC /* VisitorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorViewController.swift; sourceTree = "<group>"; };
+		11259CD91E60A01100F4ABFC /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		1156D5AF1E5FD697007805D6 /* SPWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156D5B21E5FD697007805D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1156D5BE1E5FD697007805D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -183,7 +187,9 @@
 		1156D5E61E603C09007805D6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				11259CD91E60A01100F4ABFC /* VisitorView.swift */,
 				1156D5EC1E6042A4007805D6 /* MainViewController.swift */,
+				11259CD31E606AE700F4ABFC /* VisitorViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -351,6 +357,8 @@
 				1156D5B31E5FD697007805D6 /* AppDelegate.swift in Sources */,
 				1156D5F11E6042DB007805D6 /* MessageTableViewController.swift in Sources */,
 				1156D5F31E6042EC007805D6 /* DiscoverTableViewController.swift in Sources */,
+				11259CD41E606AE700F4ABFC /* VisitorViewController.swift in Sources */,
+				11259CDA1E60A01100F4ABFC /* VisitorView.swift in Sources */,
 				1156D5ED1E6042A4007805D6 /* MainViewController.swift in Sources */,
 				1156D5F71E60628C007805D6 /* UIButton+Extension.swift in Sources */,
 			);

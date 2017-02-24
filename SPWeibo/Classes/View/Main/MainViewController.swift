@@ -11,11 +11,12 @@ import UIKit
 class MainViewController: UITabBarController {
     
     
-    private lazy var postBtn:UIButton = UIButton(name: "tabbar_compose_icon_add", backGroundName: "tabbar_compose_button")
+    fileprivate lazy var postBtn:UIButton = UIButton(name: "tabbar_compose_icon_add",
+                                                 backGroundName: "tabbar_compose_button")
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // 设置底部tabbar
         setupTabBar()
         setupPostBtn()
@@ -24,10 +25,20 @@ class MainViewController: UITabBarController {
         self.selectedIndex = 0
     }
     
+    // 将postBtn放到tabbar最上面
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tabBar.bringSubview(toFront: postBtn)
+    }
     
+    
+ }
+
+extension MainViewController{
     
     // MARK: - 设置底部tabbar
-    private func setupTabBar(){
+    /// 添加各主要controller
+    fileprivate func setupTabBar(){
         
         // 设置tabbarItem选中颜色
         tabBar.tintColor = UIColor.orange
@@ -39,21 +50,13 @@ class MainViewController: UITabBarController {
         addChildViewController(UIViewController())
         addController(name: "tabbar_discover", title: "发现", vc: DiscoverTableViewController())
         addController(name: "tabbar_profile", title: "我的", vc: ProfileTableViewController())
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        tabBar.bringSubview(toFront: postBtn)
     }
 
-
-    
     // MARK: -设置tabbar上的item
     private func addController(name:String,title:String,vc:UIViewController){
         
-//        let tabbarItem = UITabBarItem()
-//        tabbarItem.image = UIImage(named: name)
+        //        let tabbarItem = UITabBarItem()
+        //        tabbarItem.image = UIImage(named: name)
         
         let nav = UINavigationController(rootViewController: vc)
         vc.title = title
@@ -62,12 +65,13 @@ class MainViewController: UITabBarController {
         
         addChildViewController(nav)
     }
-    private func setupPostBtn() {
+    fileprivate func setupPostBtn() {
         let itemWidth = tabBar.frame.size.width / 5
         
         postBtn.frame = tabBar.bounds.insetBy(dx: 2 * itemWidth, dy: 0)
         
         tabBar.addSubview(postBtn)
     }
+
     
- }
+}
