@@ -1,0 +1,6 @@
+framework module Pods_SPWeiboTests {
+  umbrella header "Pods-SPWeiboTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

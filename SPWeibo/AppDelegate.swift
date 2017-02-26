@@ -18,10 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        window?.rootViewController = MainViewController()
+        let vc = MainViewController()
+        
+        window?.rootViewController = vc
         window?.backgroundColor = UIColor.white
         
         window?.makeKeyAndVisible()
+        
+        vc.tabBar
+        
         
         
         

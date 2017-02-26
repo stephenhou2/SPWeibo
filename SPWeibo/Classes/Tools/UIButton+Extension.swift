@@ -10,8 +10,6 @@ import UIKit
 
 
 extension UIButton{
-
-
     convenience init(name:String,backGroundName:String){
     
     self.init()
