@@ -19,7 +19,9 @@
 		1156D5F31E6042EC007805D6 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156D5F21E6042EC007805D6 /* DiscoverTableViewController.swift */; };
 		1156D5F51E6042FB007805D6 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156D5F41E6042FB007805D6 /* ProfileTableViewController.swift */; };
 		1156D5F71E60628C007805D6 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156D5F61E60628C007805D6 /* UIButton+Extension.swift */; };
-		11B536221E631E5B00F95164 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B536211E631E5B00F95164 /* NetworkTool.swift */; };
+		11B536221E631E5B00F95164 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B536211E631E5B00F95164 /* NetworkManager.swift */; };
+		11D684781E63BEB5007B425A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D684771E63BEB5007B425A /* Common.swift */; };
+		11D6847C1E63C4AD007B425A /* OAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D6847B1E63C4AD007B425A /* OAuthController.swift */; };
 		2669CBB272F4456A89ABCBC7 /* Pods_SPWeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBB20033196197A0001B3BC6 /* Pods_SPWeibo.framework */; };
 		F5AAC18DABF69FF2091BE84E /* Pods_SPWeiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF7718F166482C46573562 /* Pods_SPWeiboUITests.framework */; };
 		FB0FB0274740E50C2FDC406F /* Pods_SPWeiboTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E26952CEEEB568473BC2D60 /* Pods_SPWeiboTests.framework */; };
@@ -61,7 +63,9 @@
 		1156D5F21E6042EC007805D6 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		1156D5F41E6042FB007805D6 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		1156D5F61E60628C007805D6 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		11B536211E631E5B00F95164 /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
+		11B536211E631E5B00F95164 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		11D684771E63BEB5007B425A /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		11D6847B1E63C4AD007B425A /* OAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthController.swift; sourceTree = "<group>"; };
 		3AA834CE8F083E60744FDDDD /* Pods-SPWeiboUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPWeiboUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPWeiboUITests/Pods-SPWeiboUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E08FEAB9FA16A0F6E8EB29E /* Pods-SPWeiboUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPWeiboUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPWeiboUITests/Pods-SPWeiboUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6E26952CEEEB568473BC2D60 /* Pods_SPWeiboTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SPWeiboTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,7 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				1156D5F61E60628C007805D6 /* UIButton+Extension.swift */,
-				11B536211E631E5B00F95164 /* NetworkTool.swift */,
+				11B536211E631E5B00F95164 /* NetworkManager.swift */,
+				11D684771E63BEB5007B425A /* Common.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -207,9 +212,9 @@
 		1156D5E61E603C09007805D6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				11259CD91E60A01100F4ABFC /* VisitorView.swift */,
+				11D6847A1E63C476007B425A /* OAuth */,
+				11D684791E63C46A007B425A /* Visitor */,
 				1156D5EC1E6042A4007805D6 /* MainViewController.swift */,
-				11259CD31E606AE700F4ABFC /* VisitorViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -238,6 +243,23 @@
 				1156D5BE1E5FD697007805D6 /* Info.plist */,
 			);
 			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		11D684791E63C46A007B425A /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				11259CD91E60A01100F4ABFC /* VisitorView.swift */,
+				11259CD31E606AE700F4ABFC /* VisitorViewController.swift */,
+			);
+			name = Visitor;
+			sourceTree = "<group>";
+		};
+		11D6847A1E63C476007B425A /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				11D6847B1E63C4AD007B425A /* OAuthController.swift */,
+			);
+			name = OAuth;
 			sourceTree = "<group>";
 		};
 		1764B9644BD4AA37ECCABF14 /* Frameworks */ = {
@@ -546,11 +568,13 @@
 				1156D5EF1E6042C3007805D6 /* HomeTableViewController.swift in Sources */,
 				1156D5B31E5FD697007805D6 /* AppDelegate.swift in Sources */,
 				1156D5F11E6042DB007805D6 /* MessageTableViewController.swift in Sources */,
-				11B536221E631E5B00F95164 /* NetworkTool.swift in Sources */,
+				11B536221E631E5B00F95164 /* NetworkManager.swift in Sources */,
+				11D6847C1E63C4AD007B425A /* OAuthController.swift in Sources */,
 				1156D5F31E6042EC007805D6 /* DiscoverTableViewController.swift in Sources */,
 				11259CD41E606AE700F4ABFC /* VisitorViewController.swift in Sources */,
 				11259CDA1E60A01100F4ABFC /* VisitorView.swift in Sources */,
 				1156D5ED1E6042A4007805D6 /* MainViewController.swift in Sources */,
+				11D684781E63BEB5007B425A /* Common.swift in Sources */,
 				1156D5F71E60628C007805D6 /* UIButton+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

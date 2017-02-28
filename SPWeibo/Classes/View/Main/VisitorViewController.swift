@@ -14,15 +14,15 @@ class VisitorViewController: UITableViewController {
     
     var visitor:VisitorView?
     
-    
     override func loadView() {
         logon ? super.loadView() : setupVisitorView()
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.plain, target: self, action: #selector(loginClicked))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.plain, target: self, action: #selector(registerClicked))
+        
     }
     
     fileprivate func setupVisitorView(){
@@ -33,9 +33,23 @@ class VisitorViewController: UITableViewController {
 }
 
 
-// MARK: -设置visitorView的页面
+// MARK: -按钮点击方法
 extension VisitorViewController{
     
-   
+    
+    @objc fileprivate func loginClicked(){
+        let nav = UINavigationController(rootViewController: OAuthController())
+        present(nav, animated: true, completion: nil)
+       
+    }
+    @objc fileprivate func registerClicked(){
+        print("注册页面")
+    }
+    
+       
+}
+
+// MARK: -设置导航栏按钮
+extension VisitorViewController{
     
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,8 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.makeKeyAndVisible()
         
-        vc.tabBar
+        // 使用网络时状态栏加载菊花
+        AFNetworkActivityIndicatorManager.shared().isEnabled = true
         
+        // 设置全局的状态栏外观
+        setAppearance()
         
         
         
@@ -57,4 +61,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+// MARK: -定义全局外观方法
+extension AppDelegate{
+    fileprivate func setAppearance(){
+        UITabBar.appearance().tintColor = kSPTintColor
+        UITabBar.appearance().isOpaque = true
+        
+        UINavigationBar.appearance().tintColor = kSPTintColor
+        UINavigationBar.appearance().isOpaque = true
+        
+    }
+}
+
+
+
 

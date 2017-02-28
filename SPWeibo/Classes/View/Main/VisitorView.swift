@@ -77,16 +77,10 @@ class VisitorView: UIView {
         addSubview(register)
         addSubview(login)
 
-        
         setConstraints(backImg: backImg)
     }
-    
-    func test() {
-        print("test")
-    }
-    
     // 开始动画
-    private func startAni(){
+    fileprivate func startAni(){
         let anim = CABasicAnimation(keyPath: "transform.rotation")
         
         anim.toValue = M_PI * 2
@@ -99,10 +93,17 @@ class VisitorView: UIView {
         
         backView.layer.add(anim, forKey: "rotate")
     }
+
     
-    //MARK: -设置布局约束
-    
-    private func setConstraints(backImg:String?){
+   
+
+}
+
+
+
+//MARK: -设置布局约束
+extension VisitorView{
+    fileprivate func setConstraints(backImg:String?){
         for v in subviews {
             v.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -110,27 +111,27 @@ class VisitorView: UIView {
         /// 初始化subViews
         
         if backImg != nil{
-        // 背景图片
-        addConstraint(.init(item: backView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0))
-        addConstraint(.init(item: backView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: -60))
-        
-        startAni()
-
-        
-
-        // 遮罩
-        addConstraint(.init(item: coverView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0))
-        addConstraint(.init(item: coverView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0))
-        addConstraint(.init(item: coverView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0))
-        addConstraint(.init(item: coverView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: -180))
+            // 背景图片
+            addConstraint(.init(item: backView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0))
+            addConstraint(.init(item: backView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: -60))
+            
+            startAni()
+            
+            
+            
+            // 遮罩
+            addConstraint(.init(item: coverView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0))
+            addConstraint(.init(item: coverView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0))
+            addConstraint(.init(item: coverView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0))
+            addConstraint(.init(item: coverView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: -180))
             
         }
         
         // 房子图片
         addConstraint(.init(item: iconView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0))
         addConstraint(.init(item: iconView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: -60))
-
-
+        
+        
         // 文本框
         addConstraint(.init(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: iconView, attribute: .bottom, multiplier: 1.0, constant: 16))
         addConstraint(.init(item: titleLabel, attribute: .centerX, relatedBy: .equal, toItem: iconView, attribute: .centerX, multiplier: 1.0, constant: 0))
@@ -141,19 +142,18 @@ class VisitorView: UIView {
         // 注册按钮
         addConstraint(.init(item: register, attribute: .top, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1.0, constant: 16))
         addConstraint(.init(item: register, attribute: .left, relatedBy: .equal, toItem: titleLabel, attribute: .left, multiplier: 1.0, constant: 0))
-
+        
         addConstraint(.init(item: register, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100))
         addConstraint(.init(item: register, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 36))
-
+        
         // 登录按钮
         addConstraint(.init(item: login, attribute: .top, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1.0, constant: 16))
         addConstraint(.init(item: login, attribute: .right, relatedBy: .equal, toItem: titleLabel, attribute: .right, multiplier: 1.0, constant: 0))
-
+        
         addConstraint(.init(item: login, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100))
         addConstraint(.init(item: login, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 36))
         
-  
+        
     }
-
 
 }
