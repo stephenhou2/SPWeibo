@@ -8,4 +8,16 @@
 
 import UIKit
 
+
+let WBSwitchRootViewControllerNotification = Notification.Name.init(rawValue: "WBSwitchRootViewControllerNotification")
+
 let kSPTintColor = UIColor.orange
+
+// 获取沙盒中document文件的路径
+let docPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!
+
+enum WBSwitchRootViewControllerFlag {
+    case WBWelcomeFinishedFlag
+    case WBNewFeatureFinishedFlag
+    case WBOAuthfinishedFlag
+}

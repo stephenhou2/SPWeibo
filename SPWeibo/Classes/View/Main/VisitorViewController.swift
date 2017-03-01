@@ -10,12 +10,23 @@ import UIKit
 
 class VisitorViewController: UITableViewController {
     
-    lazy var logon:Bool = false
+    var hasLogon:Bool{
+        if ( UserDefaults.standard.value(forKey: "hasLogon") != nil){
+            return true
+        }
+        return false
+    }
+    var isExpired:Bool{
+        if (UserDefaults.standard.value(forKey: "isExpired") != nil){
+            return false
+        }
+        return true
+    }
     
     var visitor:VisitorView?
     
     override func loadView() {
-        logon ? super.loadView() : setupVisitorView()
+        (hasLogon && !(isExpired)) ? super.loadView() : setupVisitorView()
     }
     
     override func viewDidLoad() {
@@ -26,8 +37,12 @@ class VisitorViewController: UITableViewController {
     }
     
     fileprivate func setupVisitorView(){
-        visitor = VisitorView()
+        visitor = VisitorView(frame:UIScreen.main.bounds)
         view = visitor
+    }
+    
+    deinit{
+        print("VisitorViewController deinit")
     }
     
 }
@@ -44,9 +59,7 @@ extension VisitorViewController{
     }
     @objc fileprivate func registerClicked(){
         print("注册页面")
-    }
-    
-       
+    }  
 }
 
 // MARK: -设置导航栏按钮

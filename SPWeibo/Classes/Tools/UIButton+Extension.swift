@@ -10,17 +10,26 @@ import UIKit
 
 
 extension UIButton{
-    convenience init(name:String,backGroundName:String){
+    convenience init(imageName:String,backGroundImageName:String){
     
     self.init()
     
-    self.setImage(UIImage(named: name), for: UIControlState.normal)
-    self.setImage(UIImage(named: name + "_hightlighted"), for: .highlighted)
+    self.setImage(UIImage(named: imageName), for: UIControlState.normal)
+    self.setImage(UIImage(named: imageName + "_hightlighted"), for: .highlighted)
     
-    self.setBackgroundImage(UIImage(named: backGroundName), for: UIControlState.normal)
-    self.setBackgroundImage(UIImage(named: backGroundName + "_highlighted"),for: .highlighted)
+    self.setBackgroundImage(UIImage(named: backGroundImageName), for: UIControlState.normal)
+    self.setBackgroundImage(UIImage(named: backGroundImageName + "_highlighted"),for: .highlighted)
     
     self.sizeToFit()
 
     }
+    
+    convenience init(backGroundImageName:String,title:String,color:UIColor){
+        self.init()
+        setBackgroundImage(UIImage(named:backGroundImageName), for: .normal)
+        setTitle(title, for: .normal)
+        setTitleColor(color, for: .normal)
+    }
+    
+    
 }

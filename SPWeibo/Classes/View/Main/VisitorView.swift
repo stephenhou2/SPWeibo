@@ -20,7 +20,9 @@ class VisitorView: UIView {
 //        fatalError("init(coder:) has not been implemented")
         super.init(coder: aDecoder)
     }
-    
+    override func willMove(toWindow newWindow: UIWindow?) {
+        print("游客界面准备显示")
+    }
     
     lazy var backView:UIImageView = UIImageView()
     

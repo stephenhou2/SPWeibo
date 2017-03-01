@@ -11,6 +11,11 @@ import WebKit
 
 class OAuthController: UIViewController,WKNavigationDelegate,WKUIDelegate{
     
+    
+    
+    fileprivate var account:UserAccount?
+    
+    
     /// MARK: -微博OAuth授权认证的相关应用信息
     // appKey
     lazy var appKey = "2708932631"
@@ -58,8 +63,10 @@ class OAuthController: UIViewController,WKNavigationDelegate,WKUIDelegate{
         }
     }
     @objc private func autoFill(){
-        let js = "document.getElementById('userId').value = '18019019585';" +
-        "document.getElementById('passwd').value = '199123';"
+        
+        let js = "document.getElementById('userId').value = '18019019585';"
+                + "document.getElementById('passwd').value = '199123'"
+        
        oAuthView.evaluateJavaScript(js, completionHandler: nil)
     }
 
@@ -79,7 +86,7 @@ extension OAuthController{
             if let code = url?.query?.substring(from: "code=".endIndex){
                 
                 // 通过code从服务器获取授权的token
-                getToken(code: code)
+                tokenWith(code: code)
             }
             decisionHandler(.cancel)
             return
@@ -93,7 +100,7 @@ extension OAuthController{
 
 // MARK: -获取相关数据方法
 extension OAuthController{
-    fileprivate func getToken(code:String){
+    fileprivate func tokenWith(code:String){
         
         // 获取token所需要的参数
         let parameters = ["client_id":appKey,
@@ -104,18 +111,52 @@ extension OAuthController{
         // 向服务器请求tocken的baseURL
         let urlString = "https://api.weibo.com/oauth2/access_token"
         
-        // 从服务器获取最新的微博数据
+        // 从服务器获取最新的微博数据        
         NetworkManager.sharedManager.request(requestMethod:.POST, url: urlString, parameters: parameters, finished: { (response, error) in
+            
             guard error == nil else{
                 print(error!)
                 return
             }
-            let result = response as! [String:AnyObject]
-            self.token = result["access_token"] as! String?
-            self.getStatus()
+            
+            let basicInfoResult = response as! [String:AnyObject]
+            self.token = basicInfoResult["access_token"] as? String
+            self.account = UserAccount(dic: basicInfoResult)
+            self.detailUserInfoWith(token: self.token!,uid:(self.account?.uid)!)
+   
+            
         })
     }
     
+    private func detailUserInfoWith(token:String,uid:String){
+        
+        let parameters = ["access_token":token,
+                          "uid":uid]
+        
+        NetworkManager.sharedManager.request(requestMethod: .GET, url: "https://api.weibo.com/2/users/show.json", parameters: parameters) { (response, error) in
+            
+            guard error == nil else{
+                return
+            }
+            print(response!)
+            self.account?.addDetailInfo(dic: response as! [String:AnyObject])
+            self.account?.saveUserAccount(success: {
+                UserDefaults.standard.setValue(false, forKey: "isExpired")
+                UserDefaults.standard.setValue(true, forKey: "hasLogon")
+                self.dismiss(animated: false, completion: {
+                    NotificationCenter.default.post(name: WBSwitchRootViewControllerNotification, object: WBSwitchRootViewControllerFlag.WBOAuthfinishedFlag)
+                })
+                
+                
+            }, failure: { 
+                print("用户数据写入失败")
+                 NotificationCenter.default.post(name: WBSwitchRootViewControllerNotification, object: WBSwitchRootViewControllerFlag.WBOAuthfinishedFlag)
+            })
+            
+        }
+    }
+    
+    /// 获取用户首页最新微博
     private func getStatus(){
         
         if let token = token{
@@ -124,7 +165,7 @@ extension OAuthController{
                 print(error!)
                 return
             }
-            print(result!)
+//            print(result!)
         })
         }
     }

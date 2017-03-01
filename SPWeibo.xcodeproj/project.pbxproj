@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		11259CD41E606AE700F4ABFC /* VisitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11259CD31E606AE700F4ABFC /* VisitorViewController.swift */; };
 		11259CDA1E60A01100F4ABFC /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11259CD91E60A01100F4ABFC /* VisitorView.swift */; };
+		1125EF2B1E6598A100AF752B /* NewfeatureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1125EF2A1E6598A100AF752B /* NewfeatureCollectionViewController.swift */; };
+		1125EF2D1E65A2E300AF752B /* NewfeatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1125EF2C1E65A2E300AF752B /* NewfeatureCollectionViewCell.swift */; };
+		115498E41E66936900893353 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115498E31E66936900893353 /* WelcomeViewController.swift */; };
+		115498E61E66957000893353 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115498E51E66957000893353 /* UILabel+Extension.swift */; };
 		1156D5B31E5FD697007805D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156D5B21E5FD697007805D6 /* AppDelegate.swift */; };
 		1156D5C81E5FD697007805D6 /* SPWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156D5C71E5FD697007805D6 /* SPWeiboTests.swift */; };
 		1156D5D31E5FD697007805D6 /* SPWeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156D5D21E5FD697007805D6 /* SPWeiboUITests.swift */; };
@@ -19,9 +23,10 @@
 		1156D5F31E6042EC007805D6 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156D5F21E6042EC007805D6 /* DiscoverTableViewController.swift */; };
 		1156D5F51E6042FB007805D6 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156D5F41E6042FB007805D6 /* ProfileTableViewController.swift */; };
 		1156D5F71E60628C007805D6 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156D5F61E60628C007805D6 /* UIButton+Extension.swift */; };
-		11B536221E631E5B00F95164 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B536211E631E5B00F95164 /* NetworkManager.swift */; };
 		11D684781E63BEB5007B425A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D684771E63BEB5007B425A /* Common.swift */; };
 		11D6847C1E63C4AD007B425A /* OAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D6847B1E63C4AD007B425A /* OAuthController.swift */; };
+		11D684801E645E20007B425A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D6847F1E645E20007B425A /* NetworkManager.swift */; };
+		11D684821E65430E007B425A /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D684811E65430E007B425A /* UserAccount.swift */; };
 		2669CBB272F4456A89ABCBC7 /* Pods_SPWeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBB20033196197A0001B3BC6 /* Pods_SPWeibo.framework */; };
 		F5AAC18DABF69FF2091BE84E /* Pods_SPWeiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF7718F166482C46573562 /* Pods_SPWeiboUITests.framework */; };
 		FB0FB0274740E50C2FDC406F /* Pods_SPWeiboTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E26952CEEEB568473BC2D60 /* Pods_SPWeiboTests.framework */; };
@@ -47,6 +52,10 @@
 /* Begin PBXFileReference section */
 		11259CD31E606AE700F4ABFC /* VisitorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorViewController.swift; sourceTree = "<group>"; };
 		11259CD91E60A01100F4ABFC /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		1125EF2A1E6598A100AF752B /* NewfeatureCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureCollectionViewController.swift; sourceTree = "<group>"; };
+		1125EF2C1E65A2E300AF752B /* NewfeatureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewfeatureCollectionViewCell.swift; path = ../NewfeatureCollectionViewCell.swift; sourceTree = "<group>"; };
+		115498E31E66936900893353 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		115498E51E66957000893353 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		1156D5AF1E5FD697007805D6 /* SPWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156D5B21E5FD697007805D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1156D5BE1E5FD697007805D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,9 +72,10 @@
 		1156D5F21E6042EC007805D6 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		1156D5F41E6042FB007805D6 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		1156D5F61E60628C007805D6 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		11B536211E631E5B00F95164 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		11D684771E63BEB5007B425A /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		11D6847B1E63C4AD007B425A /* OAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthController.swift; sourceTree = "<group>"; };
+		11D6847F1E645E20007B425A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		11D684811E65430E007B425A /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		3AA834CE8F083E60744FDDDD /* Pods-SPWeiboUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPWeiboUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPWeiboUITests/Pods-SPWeiboUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E08FEAB9FA16A0F6E8EB29E /* Pods-SPWeiboUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPWeiboUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPWeiboUITests/Pods-SPWeiboUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6E26952CEEEB568473BC2D60 /* Pods_SPWeiboTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SPWeiboTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +115,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1125EF2E1E65A42C00AF752B /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				1125EF2A1E6598A100AF752B /* NewfeatureCollectionViewController.swift */,
+				1125EF2C1E65A2E300AF752B /* NewfeatureCollectionViewCell.swift */,
+			);
+			name = NewFeature;
+			sourceTree = "<group>";
+		};
+		115498E21E66935600893353 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				115498E31E66936900893353 /* WelcomeViewController.swift */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
 		1156D5A61E5FD697007805D6 = {
 			isa = PBXGroup;
 			children = (
@@ -130,8 +157,8 @@
 		1156D5B11E5FD697007805D6 /* SPWeibo */ = {
 			isa = PBXGroup;
 			children = (
-				1156D5E01E603C09007805D6 /* Classes */,
 				1156D5E91E603C21007805D6 /* SupportingFiles */,
+				1156D5E01E603C09007805D6 /* Classes */,
 			);
 			path = SPWeibo;
 			sourceTree = "<group>";
@@ -167,6 +194,7 @@
 		1156D5E11E603C09007805D6 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				11D684811E65430E007B425A /* UserAccount.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -174,8 +202,9 @@
 		1156D5E21E603C09007805D6 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				11D6847F1E645E20007B425A /* NetworkManager.swift */,
 				1156D5F61E60628C007805D6 /* UIButton+Extension.swift */,
-				11B536211E631E5B00F95164 /* NetworkManager.swift */,
+				115498E51E66957000893353 /* UILabel+Extension.swift */,
 				11D684771E63BEB5007B425A /* Common.swift */,
 			);
 			path = Tools;
@@ -212,6 +241,8 @@
 		1156D5E61E603C09007805D6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				115498E21E66935600893353 /* Welcome */,
+				1125EF2E1E65A42C00AF752B /* NewFeature */,
 				11D6847A1E63C476007B425A /* OAuth */,
 				11D684791E63C46A007B425A /* Visitor */,
 				1156D5EC1E6042A4007805D6 /* MainViewController.swift */,
@@ -565,16 +596,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1156D5F51E6042FB007805D6 /* ProfileTableViewController.swift in Sources */,
+				115498E41E66936900893353 /* WelcomeViewController.swift in Sources */,
 				1156D5EF1E6042C3007805D6 /* HomeTableViewController.swift in Sources */,
 				1156D5B31E5FD697007805D6 /* AppDelegate.swift in Sources */,
+				11D684801E645E20007B425A /* NetworkManager.swift in Sources */,
+				11D684821E65430E007B425A /* UserAccount.swift in Sources */,
+				1125EF2B1E6598A100AF752B /* NewfeatureCollectionViewController.swift in Sources */,
 				1156D5F11E6042DB007805D6 /* MessageTableViewController.swift in Sources */,
-				11B536221E631E5B00F95164 /* NetworkManager.swift in Sources */,
 				11D6847C1E63C4AD007B425A /* OAuthController.swift in Sources */,
 				1156D5F31E6042EC007805D6 /* DiscoverTableViewController.swift in Sources */,
 				11259CD41E606AE700F4ABFC /* VisitorViewController.swift in Sources */,
+				115498E61E66957000893353 /* UILabel+Extension.swift in Sources */,
 				11259CDA1E60A01100F4ABFC /* VisitorView.swift in Sources */,
 				1156D5ED1E6042A4007805D6 /* MainViewController.swift in Sources */,
 				11D684781E63BEB5007B425A /* Common.swift in Sources */,
+				1125EF2D1E65A2E300AF752B /* NewfeatureCollectionViewCell.swift in Sources */,
 				1156D5F71E60628C007805D6 /* UIButton+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,9 +11,12 @@ import UIKit
 class MainViewController: UITabBarController {
     
     
-    fileprivate lazy var postBtn:UIButton = UIButton(name: "tabbar_compose_icon_add",
-                                                 backGroundName: "tabbar_compose_button")
+    fileprivate lazy var postBtn:UIButton = UIButton(imageName: "tabbar_compose_icon_add",
+                                                 backGroundImageName: "tabbar_compose_button")
 
+    
+    static let sharedMainVC = MainViewController()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +75,6 @@ extension MainViewController{
         
         tabBar.addSubview(postBtn)
     }
-
+    
     
 }

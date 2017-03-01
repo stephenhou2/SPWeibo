@@ -34,8 +34,9 @@ class NetworkManager: AFHTTPSessionManager {
 // MARK: - 网络工具封装的方法
 extension NetworkManager{
     /// 请求方法
+    
     func request(requestMethod:SPNetRequsetType,url:String,parameters:[String:String]?,finished:@escaping (Any?,Error?)->()) {
-        Dictionary
+
         if (requestMethod == .GET){
             NetworkManager.sharedManager.get(url, parameters: parameters, progress: nil, success: { (dataTask, responseObject) in
                 // 成功所执行回调

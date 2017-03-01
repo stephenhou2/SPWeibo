@@ -17,5 +17,8 @@ class HomeTableViewController: VisitorViewController {
                                title: "关注一些人，回这里看看有什么惊喜")
         
     }
-
+    
+    deinit{
+        print("HomeTableViewController deinit")
+    }
    }
